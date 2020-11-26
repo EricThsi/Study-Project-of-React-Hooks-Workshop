@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea/.gitignore
+.idea/Study-Project-of-React-Hooks-Workshop.iml
+.idea/aws.xml
+.idea/codeStyles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
