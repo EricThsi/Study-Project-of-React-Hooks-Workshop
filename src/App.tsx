@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppProvider } from './storeContainer';
+import { AppProvider } from './store/storeContainer';
 import { Counter } from './components/Counter/Counter';
 
 import logo from './logo.svg';

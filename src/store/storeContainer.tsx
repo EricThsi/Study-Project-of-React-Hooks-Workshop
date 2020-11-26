@@ -1,6 +1,6 @@
 import React, { FC, useReducer } from 'react';
-import { appReducer } from './store/reducers/appReducer';
-import AppContext, { initialState } from './store/store';
+import { appReducer } from './reducers/appReducer';
+import AppContext, { initialState } from './store';
 
 export const AppProvider: FC = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
