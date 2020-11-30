@@ -9,10 +9,16 @@ export const appReducer = (
   action: TodoActions,
 ): IAppState => {
   switch (action.type) {
-    case Actions.COUNTER_INCREASE: {
+    case Actions.COUNTER_UP: {
       return {
         ...state,
         counter: state.counter + 1,
+      };
+    }
+    case Actions.COUNTER_DOWN: {
+      return {
+        ...state,
+        counter: state.counter - 1,
       };
     }
     case Actions.CREATE_ITEM: {

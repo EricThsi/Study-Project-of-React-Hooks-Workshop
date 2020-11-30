@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import AppContext from '../../store/store';
-import { counterIncreaseActionCreator } from '../../store/actions/actionsCreator';
+import {
+  counterDownActionCreator,
+  counterUpActionCreator,
+} from '../../store/actions/actionsCreator';
 
 export const Counter = () => {
   const {
@@ -8,14 +11,19 @@ export const Counter = () => {
     dispatch,
   } = useContext(AppContext);
 
-  const increaseCounter = () => {
-    dispatch(counterIncreaseActionCreator());
+  const counterUp = () => {
+    dispatch(counterUpActionCreator());
+  };
+
+  const counterDown = () => {
+    dispatch(counterDownActionCreator());
   };
 
   return (
     <div>
       <p>{counter}</p>
-      <button onClick={() => increaseCounter()}>Increase</button>
+      <button onClick={() => counterUp()}>+</button>
+      <button onClick={() => counterDown()}>-</button>
     </div>
   );
 };

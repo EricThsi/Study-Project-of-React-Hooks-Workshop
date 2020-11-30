@@ -4,9 +4,15 @@
 import { ITodo } from '../../constants/interfaces';
 import { Actions } from './actions';
 
-export const counterIncreaseActionCreator = () => {
+export const counterUpActionCreator = () => {
   return {
-    type: Actions.COUNTER_INCREASE,
+    type: Actions.COUNTER_UP,
+  };
+};
+
+export const counterDownActionCreator = () => {
+  return {
+    type: Actions.COUNTER_DOWN,
   };
 };
 

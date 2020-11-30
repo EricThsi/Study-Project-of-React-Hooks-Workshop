@@ -6,7 +6,8 @@ import { ITodo } from '../../constants/interfaces';
 import { VisibilityType } from '../../constants/constants';
 
 export enum Actions {
-  COUNTER_INCREASE = 'COUNTER_INCREASE',
+  COUNTER_UP = 'COUNTER_UP',
+  COUNTER_DOWN = 'COUNTER_DOWN',
   CREATE_ITEM = 'CREATE_ITEM',
   UPDATE_ITEM = 'UPDATE_ITEM',
   DELETE_ITEM = 'DELETE_IT',
@@ -17,7 +18,8 @@ export enum Actions {
 }
 
 export type TodoActions =
-  | { type: Actions.COUNTER_INCREASE }
+  | { type: Actions.COUNTER_UP }
+  | { type: Actions.COUNTER_DOWN }
   | {
       type: Actions.CREATE_ITEM;
       payload: ITodo;
