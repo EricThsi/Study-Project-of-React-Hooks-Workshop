@@ -8,7 +8,13 @@ import { TodoActions } from './actions/actions';
 
 export const initialState: IAppState = {
   counter: 0,
-  todos: [],
+  todos: [
+    {
+      id: '111',
+      text: 'Todo Item.',
+      isCompleted: false,
+    },
+  ],
   newTodo: '',
   visibility: VisibilityType.ALL,
 };

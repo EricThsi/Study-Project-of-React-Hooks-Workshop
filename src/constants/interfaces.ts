@@ -10,6 +10,10 @@ export interface ITodoList {
   todos: ITodo[];
 }
 
+export interface ITodoItem {
+  todo: ITodo;
+}
+
 export interface IAppState {
   counter: number;
   todos: ITodo[];

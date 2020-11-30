@@ -1,19 +1,21 @@
 import React from 'react';
 import { AppProvider } from './store/storeContainer';
-import { Counter } from './components/Counter/Counter';
+// import { Counter } from './components/Counter/Counter';
+import TodoList from './components/TodoList/TodoList';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <AppProvider>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <Counter />
-        <p>TodoList App by React with Hooks.</p>
+      <div className="app">
+        <div className="todoapp">
+          <header className="header">
+            <h1>Todos</h1>
+          </header>
+          <TodoList />
+          {/*<Counter />*/}
+        </div>
       </div>
     </AppProvider>
   );
