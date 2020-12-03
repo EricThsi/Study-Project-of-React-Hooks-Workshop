@@ -2,8 +2,10 @@
 
 ## Requirements
 
-- node `^2.x`
-- npm '^6.14.x'
+- node `^12.x`
+- npm `^6.14.x`
+
+recommend [nvm](https://github.com/nvm-sh/nvm) to install node.
 
 ## Installation
 
