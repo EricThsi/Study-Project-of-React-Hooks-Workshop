@@ -16,6 +16,9 @@ const TodoList = () => {
     dispatch,
   } = useContext(AppContext);
 
+  const isTodoListNotEmpty = todos.length !== 0;
+  const isAllItemsCompleted = todos.every((todo) => todo.isCompleted);
+
   const handleTodoCreate = (newTodo: ITodo) => {
     dispatch(todoCreateItemActionCreator(newTodo));
   };
@@ -35,8 +38,17 @@ const TodoList = () => {
         <TodoForm handleTodoCreate={handleTodoCreate} />
       </header>
       <div className="main">
-        <input type="checkbox" id="toggle-all" className="toggle-all" />
-        <label htmlFor="toggle-all">Mark all as complete</label>
+        {isTodoListNotEmpty && (
+          <>
+            <input
+              type="checkbox"
+              id="toggle-all"
+              className="toggle-all"
+              checked={isAllItemsCompleted}
+            />
+            <label htmlFor="toggle-all">Mark all as complete</label>
+          </>
+        )}
         <ul className="todo-list">
           {todos.map((todo) => (
             <TodoItem
@@ -48,7 +60,7 @@ const TodoList = () => {
           ))}
         </ul>
       </div>
-      {todos.length !== 0 && (
+      {isTodoListNotEmpty && (
         <TodoFooter todos={todos} visibility={visibility} />
       )}
     </div>
