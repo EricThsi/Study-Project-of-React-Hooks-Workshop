@@ -22,3 +22,21 @@ export const todoCreateItemActionCreator = (item: ITodo) => {
     payload: item,
   };
 };
+
+export const todoRemoveItemActionCreator = (id: string) => {
+  return {
+    type: Actions.REMOVE_ITEM,
+    payload: {
+      id,
+    },
+  };
+};
+
+export const todoToggleItemActionCreator = (id: string) => {
+  return {
+    type: Actions.TOGGLE_ITEM,
+    payload: {
+      id,
+    },
+  };
+};

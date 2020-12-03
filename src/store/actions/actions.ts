@@ -10,7 +10,7 @@ export enum Actions {
   COUNTER_DOWN = 'COUNTER_DOWN',
   CREATE_ITEM = 'CREATE_ITEM',
   UPDATE_ITEM = 'UPDATE_ITEM',
-  DELETE_ITEM = 'DELETE_IT',
+  REMOVE_ITEM = 'DELETE_ITEM',
   CHANGE_VISIBILITY = 'CHANGE_VISIBILITY',
   TOGGLE_ALL_ITEMS = 'TOGGLE_ALL_ITEMS',
   TOGGLE_ITEM = 'TOGGLE_ITEM',
@@ -32,7 +32,7 @@ export type TodoActions =
       };
     }
   | {
-      type: Actions.DELETE_ITEM;
+      type: Actions.REMOVE_ITEM;
       payload: {
         id: string;
       };

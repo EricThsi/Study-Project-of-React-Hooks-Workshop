@@ -12,12 +12,13 @@ export interface ITodoList {
 
 export interface ITodoItem {
   todo: ITodo;
+  handleTodoToggle: (id: string) => void;
+  handleTodoRemove: (id: string) => void;
 }
 
 export interface IAppState {
   counter: number;
   todos: ITodo[];
-  newTodo: string;
   visibility: VisibilityType;
 }
 

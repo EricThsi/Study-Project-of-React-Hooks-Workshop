@@ -42,10 +42,10 @@ export const appReducer = (
         }),
       };
     }
-    case Actions.DELETE_ITEM: {
+    case Actions.REMOVE_ITEM: {
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id === action.payload.id),
+        todos: state.todos.filter((todo) => todo.id !== action.payload.id),
       };
     }
     case Actions.TOGGLE_ITEM: {

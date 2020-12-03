@@ -20,7 +20,6 @@ export const initialState: IAppState = {
       isCompleted: true,
     },
   ],
-  newTodo: '',
   visibility: VisibilityType.ALL,
 };
 

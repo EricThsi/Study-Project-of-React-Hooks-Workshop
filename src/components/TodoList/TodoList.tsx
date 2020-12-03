@@ -4,7 +4,11 @@ import AppContext from '../../store/store';
 import TodoFooter from '../TodoFooter/TodoFooter';
 import TodoForm from '../TodoForm/TodoForm';
 import { ITodo } from '../../constants/interfaces';
-import { todoCreateItemActionCreator } from '../../store/actions/actionsCreator';
+import {
+  todoCreateItemActionCreator,
+  todoRemoveItemActionCreator,
+  todoToggleItemActionCreator,
+} from '../../store/actions/actionsCreator';
 
 const TodoList = () => {
   const {
@@ -14,6 +18,14 @@ const TodoList = () => {
 
   const handleTodoCreate = (newTodo: ITodo) => {
     dispatch(todoCreateItemActionCreator(newTodo));
+  };
+
+  const handleTodoToggle = (id: string) => {
+    dispatch(todoToggleItemActionCreator(id));
+  };
+
+  const handleTodoRemove = (id: string) => {
+    dispatch(todoRemoveItemActionCreator(id));
   };
 
   return (
@@ -27,7 +39,12 @@ const TodoList = () => {
         <label htmlFor="toggle-all">Mark all as complete</label>
         <ul className="todo-list">
           {todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              handleTodoToggle={handleTodoToggle}
+              handleTodoRemove={handleTodoRemove}
+            />
           ))}
         </ul>
       </div>
