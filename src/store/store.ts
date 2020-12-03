@@ -11,8 +11,13 @@ export const initialState: IAppState = {
   todos: [
     {
       id: '111',
-      text: 'Todo Item.',
+      text: 'React Functional Component.',
       isCompleted: false,
+    },
+    {
+      id: '222',
+      text: 'React Hooks.',
+      isCompleted: true,
     },
   ],
   newTodo: '',

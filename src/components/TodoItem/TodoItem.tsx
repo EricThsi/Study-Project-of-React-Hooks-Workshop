@@ -2,14 +2,18 @@ import React, { FC } from 'react';
 import { ITodoItem } from '../../constants/interfaces';
 
 const TodoItem: FC<ITodoItem> = (props: ITodoItem) => {
-  const { todo } = props;
+  const {
+    todo: { isCompleted, text },
+  } = props;
   return (
-    <div className="view todo-item">
-      <input className="toggle" type="checkbox" checked={todo.isCompleted} />
-      <label>{todo.text} </label>
-      <button className="destroy"></button>
+    <li className={isCompleted ? 'completed' : ''}>
+      <div className="view">
+        <input className="toggle" type="checkbox" checked={isCompleted} />
+        <label>{text} </label>
+        <button className="destroy"></button>
+      </div>
       <input type="text" className="edit" />
-    </div>
+    </li>
   );
 };
 

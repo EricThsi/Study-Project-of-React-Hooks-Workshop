@@ -9,13 +9,8 @@ function App() {
   return (
     <AppProvider>
       <div className="app">
-        <div className="todoapp">
-          <header className="header">
-            <h1>Todos</h1>
-          </header>
-          <TodoList />
-          {/*<Counter />*/}
-        </div>
+        <TodoList />
+        {/*<Counter />*/}
       </div>
     </AppProvider>
   );

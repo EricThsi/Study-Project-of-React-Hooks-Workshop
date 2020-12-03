@@ -20,3 +20,8 @@ export interface IAppState {
   newTodo: string;
   visibility: VisibilityType;
 }
+
+export interface ITodoFooter {
+  todos: ITodo[];
+  visibility: VisibilityType;
+}
