@@ -21,6 +21,10 @@ export interface IAppState {
   visibility: VisibilityType;
 }
 
+export interface ITodoForm {
+  handleTodoCreate: (todo: ITodo) => void;
+}
+
 export interface ITodoFooter {
   todos: ITodo[];
   visibility: VisibilityType;

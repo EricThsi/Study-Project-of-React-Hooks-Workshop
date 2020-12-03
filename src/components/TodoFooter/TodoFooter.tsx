@@ -3,10 +3,6 @@ import { VisibilityType } from '../../constants/constants';
 import { ITodoFooter } from '../../constants/interfaces';
 
 const TodoFooter: FC<ITodoFooter> = ({ todos, visibility }: ITodoFooter) => {
-  if (todos.length === 0) {
-    return null;
-  }
-
   const isAllSelected = visibility === VisibilityType.ALL ? 'selected' : '';
   const isActiveSelected =
     visibility === VisibilityType.ACTIVE ? 'selected' : '';

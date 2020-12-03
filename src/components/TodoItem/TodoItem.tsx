@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { ITodoItem } from '../../constants/interfaces';
 
 const TodoItem: FC<ITodoItem> = (props: ITodoItem) => {
