@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppProvider } from './store/storeContainer';
-// import { Counter } from './components/Counter/Counter';
+import { Counter } from './components/Counter/Counter';
 import TodoList from './components/TodoList/TodoList';
 
 import './App.css';
@@ -9,8 +9,8 @@ function App() {
   return (
     <AppProvider>
       <div className="app">
-        <TodoList />
-        {/*<Counter />*/}
+        {/*<TodoList />*/}
+        <Counter />
       </div>
     </AppProvider>
   );

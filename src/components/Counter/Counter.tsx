@@ -4,6 +4,9 @@ import {
   counterDownActionCreator,
   counterUpActionCreator,
 } from '../../store/actions/actionsCreator';
+import HooksSimulateDidMount from '../Simulation/HooksSimulateDidMount';
+import HooksSimulateDidUpdate from '../Simulation/HooksSimulateDidUpdate';
+import HooksSimulateWillUmount from '../Simulation/HooksSimulateWillUmount';
 
 export const Counter = () => {
   const {
@@ -22,8 +25,12 @@ export const Counter = () => {
   return (
     <div>
       <p>{counter}</p>
-      <button onClick={() => counterUp()}>+</button>
-      <button onClick={() => counterDown()}>-</button>
+      <button onClick={() => counterUp()}>Count Up +</button>
+      <button onClick={() => counterDown()}>Count Down -</button>
+      <p>-------------------------------------------</p>
+      <HooksSimulateDidMount count={counter} />
+      {/*<HooksSimulateDidUpdate count={counter} />*/}
+      {/*{counter !== 1 && <HooksSimulateWillUmount count={counter} />}*/}
     </div>
   );
 };
