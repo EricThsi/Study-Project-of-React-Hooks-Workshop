@@ -40,3 +40,12 @@ export const todoToggleItemActionCreator = (id: string) => {
     },
   };
 };
+
+export const todoToggleAllActionCreator = (toggleStatus: boolean) => {
+  return {
+    type: Actions.TOGGLE_ALL_ITEMS,
+    payload: {
+      toggleStatus,
+    },
+  };
+};

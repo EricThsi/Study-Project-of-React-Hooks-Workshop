@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { ChangeEvent, useContext } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import AppContext from '../../store/store';
 import TodoFooter from '../TodoFooter/TodoFooter';
@@ -7,6 +7,7 @@ import { ITodo } from '../../constants/interfaces';
 import {
   todoCreateItemActionCreator,
   todoRemoveItemActionCreator,
+  todoToggleAllActionCreator,
   todoToggleItemActionCreator,
 } from '../../store/actions/actionsCreator';
 
@@ -31,6 +32,10 @@ const TodoList = () => {
     dispatch(todoRemoveItemActionCreator(id));
   };
 
+  const handleTodoToggleAll = () => {
+    dispatch(todoToggleAllActionCreator(!isAllItemsCompleted));
+  };
+
   return (
     <div className="todoapp">
       <header className="header">
@@ -45,6 +50,7 @@ const TodoList = () => {
               id="toggle-all"
               className="toggle-all"
               checked={isAllItemsCompleted}
+              onChange={handleTodoToggleAll}
             />
             <label htmlFor="toggle-all">Mark all as complete</label>
           </>
