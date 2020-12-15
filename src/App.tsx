@@ -9,8 +9,8 @@ function App() {
   return (
     <AppProvider>
       <div className="app">
-        {/*<TodoList />*/}
-        <Counter />
+        <TodoList />
+        {/*<Counter />*/}
       </div>
     </AppProvider>
   );

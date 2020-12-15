@@ -6,10 +6,12 @@ import TodoForm from '../TodoForm/TodoForm';
 import { ITodo } from '../../constants/interfaces';
 import {
   todoCreateItemActionCreator,
+  todoListVisibilityActionCreator,
   todoRemoveItemActionCreator,
   todoToggleAllActionCreator,
   todoToggleItemActionCreator,
 } from '../../store/actions/actionsCreator';
+import { VisibilityType } from '../../constants/constants';
 
 const TodoList = () => {
   const {
@@ -36,6 +38,24 @@ const TodoList = () => {
     dispatch(todoToggleAllActionCreator(!isAllItemsCompleted));
   };
 
+  const handleTodoVisibility = (visibility: VisibilityType) => {
+    dispatch(todoListVisibilityActionCreator(visibility));
+  };
+
+  const filterTodos = todos.filter((todo) => {
+    if (visibility === VisibilityType.COMPLETED && todo.isCompleted) {
+      return true;
+    }
+
+    if (visibility == VisibilityType.ACTIVE && !todo.isCompleted) {
+      return true;
+    }
+
+    if (visibility == VisibilityType.ALL) {
+      return true;
+    }
+  });
+
   return (
     <div className="todoapp">
       <header className="header">
@@ -56,7 +76,7 @@ const TodoList = () => {
           </>
         )}
         <ul className="todo-list">
-          {todos.map((todo) => (
+          {filterTodos.map((todo) => (
             <TodoItem
               key={todo.id}
               todo={todo}
@@ -67,7 +87,11 @@ const TodoList = () => {
         </ul>
       </div>
       {isTodoListNotEmpty && (
-        <TodoFooter todos={todos} visibility={visibility} />
+        <TodoFooter
+          todos={todos}
+          visibility={visibility}
+          handleTodoVisibility={handleTodoVisibility}
+        />
       )}
     </div>
   );

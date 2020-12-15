@@ -29,4 +29,5 @@ export interface ITodoForm {
 export interface ITodoFooter {
   todos: ITodo[];
   visibility: VisibilityType;
+  handleTodoVisibility: (visibility: VisibilityType) => void;
 }

@@ -3,6 +3,7 @@
  */
 import { ITodo } from '../../constants/interfaces';
 import { Actions } from './actions';
+import { VisibilityType } from '../../constants/constants';
 
 export const counterUpActionCreator = () => {
   return {
@@ -46,6 +47,15 @@ export const todoToggleAllActionCreator = (toggleStatus: boolean) => {
     type: Actions.TOGGLE_ALL_ITEMS,
     payload: {
       toggleStatus,
+    },
+  };
+};
+
+export const todoListVisibilityActionCreator = (visibility: VisibilityType) => {
+  return {
+    type: Actions.CHANGE_VISIBILITY,
+    payload: {
+      visibility,
     },
   };
 };
